@@ -1,0 +1,166 @@
+a{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#content {
+    height: 1200px;
+margin-bottom: 0;
+position: absolute;
+}
+.wrapper{
+    position: absolute;
+    overflow: hidden;
+}
+.item {
+    position: relative;
+}
+.qus_list {
+
+    position: relative;
+}
+.inner {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+/*.item1{*/
+  /*background: url(../images/index-bg.png) center no-repeat;*/
+  /*background-size: cover;*/
+/*}*/
+#content1{
+
+
+    margin-bottom: 0;
+    position: relative;
+}
+.content{
+  position:absolute
+}
+.p1-bt{
+    position: absolute;
+    width: 14%;
+    top: 140%;
+    left: 43%;
+}
+.p1-tit{
+  position: absolute;
+  width: 91.6%;
+  left: 2%;
+  top: 9%;
+}
+
+
+body{
+    opacity: 0;
+}
+#content1 .page1{
+    height: 1080px;
+    background: url('../images/p1-bg.jpg') no-repeat center;
+    background-size: 100% 100%;
+    display: none;
+}
+#content1 .p1-banner{
+    width: 100%;
+}
+#content1 .p1-title{
+    width: 86.8%;
+    position: absolute;
+    top:7%;
+    left:  0;
+    right: 0;
+    margin: auto;
+}
+#content1 .p1-desc{
+    width: 100%;
+    display: block;
+    margin: 3% auto 10% auto;
+}
+#content1 .p1-tips{
+    width: 92%;
+    margin: 0  auto;
+    position: relative;
+}
+#content1 .p1-tips1{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+#content1 .p1-tips2{
+    width: 12.165%;
+}
+#content1 .p1-tips3{
+    width: 22%;
+}
+
+
+
+/*尊享礼遇页样式*/
+#content1 .page2{
+    height: 1920px;
+    background: url('../images/p2-bg.jpg') no-repeat center;
+    background-size: 100% 100%;
+    display: none;
+}
+#content1 .banner1 .banner1-img{
+    margin-bottom: 3%;
+}
+#content1 .page2 ul{
+    margin:1% 0 13% 10%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #003978;
+}
+#content1 .page2 img{
+    width: 100%;
+}
+#content1 .page2 li{
+    list-style: disc;
+}
+
+#content1 .p2-search{
+    display: inline-block;
+    float: right;
+    margin-top: -12%;
+    margin-right: 5%;
+    width: 18.667%;
+}
+
+/*底部导航样式*/
+#content1 .menu{
+    width: 100%;
+    height: 125px;
+    background: url("../images/btns-bg.png") no-repeat center;
+    background-size: 100% 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    line-height: 125px;
+}
+#content1 .wrap{
+    width: 100%;
+    height: 95px;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+#content1 .menu a{
+    width: 33.2%;
+    height: 95px;
+    text-align: center;
+    line-height: 95px;
+    font-size: 0;
+    display: block;
+    float: left;
+    border-right: 1px solid #a0bce4;
+}
+#content1 .menu a:last-child{
+    border: none;
+}
+#content1 .menu img{
+    vertical-align: middle;
+    height: 89px;
+}
+.dip1,.dic2,.dic3{display:none}

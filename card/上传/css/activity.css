@@ -1,0 +1,340 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+.mob-tc ol li ,.mob-tc p {word-break: normal;word-wrap: break-word;}
+.font-weight{font-weight:bold;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+strong, b {
+    font-weight: bold !important;
+}
+
+/*璁剧疆椤甸潰瀛椾綋rem涓哄崟浣�*/
+
+html {
+    font-size: 625%;
+
+}
+
+@media only screen and (min-width: 320px) {
+    html {
+        font-size: 533%;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    html {
+        font-size: 625% ;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 690% ;
+    }
+}
+@media only screen and (min-width: 600px) {
+    html {
+        font-size: 1000% ;
+    }
+}
+@media only screen and (min-width: 800px) {
+    html {
+        font-size: 1333% ;
+    }
+}
+
+
+/*init*/
+
+/*#wrapper {
+    width: 100%;
+}
+
+#wrapper header {
+    width: 100%;
+    height: 52px;
+}
+
+#content {
+    width: 100%;
+    margin: 0;
+}*/
+
+.c-fb603d {
+    color: #f2633c;
+}
+
+.mt0 {
+    margin: 0 !important;
+}
+
+
+/*鍙宭ogo淇敼*/
+
+/*.bank-l {
+    width: 50%;
+    background-size: 173%;
+    height: 38px;
+    margin: 0;
+}
+
+.buy-r {
+    width: 38%;
+    background-size: 230%;
+    height: 38px;
+    margin: 0;
+}
+
+#headerTop {
+    height: 38px!important;
+}*/
+
+/*
+#logolink {
+    height: 10px !important;
+    background-color: #03357C;
+    line-height: 7px !important;
+    font-size: 0px;
+}
+*/
+
+
+/*tc*/
+
+.mob-tc {
+    padding: 0 0.15rem 0.2rem 0.15rem;
+}
+
+.mob-tc a {
+    color: #00F;
+    text-decoration: underline;
+}
+
+.mob-tc h1 {
+    font-size: 0.19rem;
+    color: #333333;
+    text-align: center;
+    padding-top: 0.15rem;
+    line-height: 0.28rem;
+    font-weight: bold;
+}
+
+.mob-tc h3 {
+    color: #f2633c;
+    /*color: #03357C;*/
+    font-size: 0.17rem;
+    line-height: 0.17rem;
+    padding: 0.15rem 0 0.06rem 0;
+    font-weight: bold;
+}
+
+.mob-tc p {
+    color: #333333;
+    font-size: 0.15rem;
+    line-height: 0.24rem;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.mob-tc ol {}
+
+.mob-tc ol li {
+    list-style: decimal inside;
+    color: #333333;
+    font-size: 0.15rem;
+    line-height: 0.24rem;
+    padding-bottom: 0.1rem;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.mob-tc table.datalist {
+    width: 100%;
+    background-color: #CACBCF;
+    margin: 0.1rem auto;
+    border-collapse: collapse;
+    border: 1px solid #999999;
+}
+
+.mob-tc table.datalist th,
+.mob-tc table.datalist td {
+    padding: 2px 5px;
+    background-color: #FFFFFF;
+    line-height: 0.16rem;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #999999;
+    font-size: 0.12rem;
+}
+
+.mob-tc table.datalist th {
+    color: #0093d3;
+    text-align: left;
+    font-weight: normal;
+}
+
+.split-line {
+    border-bottom: 1px solid #D0D0D0;
+    height: 1px;
+    width: 100%;
+    padding-top: 0.085rem;
+}
+
+
+/*list*/
+
+.mob-list {
+    padding: 0 10px 0 10px;
+}
+
+.mob-list .card-list,
+.mob-list .card-list-long {
+    font-size: 0px;
+    padding-top: 0.15rem;
+}
+
+.mob-list .card-list a,
+.mob-list .card-list-long a {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    font-size: 0.15rem;
+    height: 0.31rem;
+    width: 48%;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    line-height: 0.31rem;
+    overflow: hidden;
+    color: #d9d9d9;
+}
+
+.mob-list .card-list a:nth-child(even){
+    margin-left: 0.06rem;
+}
+
+.mob-list .card-list a.active,
+.mob-list .card-list-long a.active {
+    color: #ffffff;
+    font-size: 0.15rem;
+    font-weight: bold;
+    background: #0093d3;
+    border: 1px solid #0093d3;
+}
+.mob-list .card-list-long a{
+    width: 99%;
+}
+.mob-list .card-list-long a:nth-child(even) {
+    margin-left: 0;
+}
+
+/**/
+
+.mob-list .city-list .select-box {
+    font-size: 0px;
+    width: 50%;
+    overflow: hidden;
+    float: left;
+    /*background: url(../images/icon-list-jt.png) no-repeat 90% center;*/
+}
+
+.mob-list .city-list {
+    margin-top: 10px;
+    border: 1px solid #1894ca;
+    border-radius: 5px;
+    line-height: 0.43rem;
+    /*background: url(../images/icon-list-split.gif) no-repeat center center;*/
+    height: 0.43rem;
+}
+
+.mob-list .city-list select {
+    appearance: none;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari 鍜� Chrome */
+    border: none;
+    display: inline-block;
+    width: 120%;
+    color: #333333;
+    font-size: 0.17rem;
+    line-height: 0.43rem;
+    background: none;
+    height: 0.43rem;
+    padding-left: 0.1rem;
+}
+
+
+/**/
+
+.mob-list .shop-list {
+    margin-top: 0.075rem;
+}
+
+.mob-list .shop-list table {
+    width: 100%;
+    background-color: #CACBCF;
+    margin: 10px auto;
+    border-collapse: collapse;
+    border: 1px solid #d9d9d9;
+    display: none;
+}
+
+.mob-list .shop-list th,
+.mob-list .shop-list td {
+    width: 50%;
+    padding: 5px 0.125rem;
+    background-color: #FFFFFF;
+    line-height: 0.2rem;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d9d9d9;
+    font-size: 0.15rem;
+}
+
+.mob-list .shop-list th {
+    color: #0093d3;
+    text-align: left;
+    font-weight: normal;
+    font-size: 0.17rem;
+}
+
+/*tst*/

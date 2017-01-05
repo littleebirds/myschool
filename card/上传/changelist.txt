@@ -1,0 +1,17 @@
+已通过测试浏览器: iphone6 小米4 三星S6
+
+/*2016年11月24*/
+
+提交的目的：新增文件
+需求文件名：白金卡网络发卡注册 Mobile
+
+1、查看 新增
+    HTML: index.html activity.html
+2、上传 新增
+    HTML: index.html activity.html
+    CSS: index.css activity.css
+    JS: process.js iscroll.js
+    IMAGES: 所有图片
+    修改日志：changelist.txt  update-20161124.xls
+
+ 
