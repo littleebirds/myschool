@@ -1,4 +1,4 @@
-window.onload=function () {
+
     var oWel=document.getElementById('welcome');
     var oBox=document.getElementById('box');
     var oPage1=fun.getClass2(document,'page1')[0];
@@ -447,7 +447,6 @@ window.onload=function () {
         }
     };
 
-};
 
 
 
