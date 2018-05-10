@@ -315,7 +315,7 @@ define( function(require,exports,module ) {
             return false;
         };
 
-        var endEvenetHandler = function () {
+        var endEvenetHandler = function (e) {
             time_end = Date.now();
 
             //时间距离都符合
@@ -343,6 +343,14 @@ define( function(require,exports,module ) {
                         }
                 }
             }
+            //当前操作完成，取消事件监听,并将全局变量设为undefined，否则会因为闭包导致上个坐标一直存在当前作用域内无法销毁
+            // obj.removeEventListener(startE,false);
+            // obj.removeEventListener(moveE);
+            // obj.removeEventListener(endE);
+            removeEvent1(obj,startE);
+            removeEvent1(obj, moveE);
+            removeEvent1(obj, endE);
+            point_start=time_start=point_end=time_end=undefined;
         };
 
 
@@ -362,9 +370,12 @@ define( function(require,exports,module ) {
             moveE = 'mousemove';
             endE = 'mouseup';
         }
-        obj.addEventListener(startE, startEvtHandler, false);
-        obj.addEventListener(moveE, moveEventHandler, false);
-        obj.addEventListener(endE, endEvenetHandler, false);
+        // obj.addEventListener(startE, startEvtHandler, false);
+        // obj.addEventListener(moveE, moveEventHandler, false);
+        // obj.addEventListener(endE, endEvenetHandler, false);
+        addEvent1(obj, startE, startEvtHandler)
+        addEvent1(obj, moveE, moveEventHandler)
+        addEvent1(obj, endE, endEvenetHandler)
 
     }
 

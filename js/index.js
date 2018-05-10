@@ -34,8 +34,15 @@ define(function (require,exports,module) {
         }
     });
 
+    //首页时间
+    var indexTimer;
+    setTime()
+
     //首页淡出 ，右滑
     fun.handSlip(oWel, function () {
+
+        clearInterval(indexTimer) //清楚首页的定时器
+
         oWel.className += 'fadeOut';
         setTimeout(function () {
             oWel.style.display = 'none';
@@ -96,9 +103,7 @@ define(function (require,exports,module) {
     }
     //显示为第一页要执行的函数
     function one() {
-        for (var i = 0; i < 5; i++) {
-            clearInterval(oPage2.getElementsByTagName('img')[i].timer);
-        }
+
         var oLogo = fun.getClass2(oBox, 'logo')[0];
         var op1School = fun.getClass2(oBox, 'p1-school')[0];
         var oP = oBox.getElementsByTagName('p')[0];
@@ -125,10 +130,7 @@ define(function (require,exports,module) {
             .to(oPerson, 1, { display: 'block', left: 0, opacity: 1, ease: Elastic.easeOut })
             .to(oTitle, 1, { opacity: 1, ease: Linear.easeIn })
             .to(op2Box, 1, { opacity: 100, ease: Linear.easeIn,onComplete:function() {
-                for (var i = 0; i < 5; i++) {
-                    oPage2.getElementsByTagName('img')[i].style.display = 'block';
-                }
-                op2BoxFun();
+
             }})
             .to(op2Board,1,{opacity:1,ease:Linear.easeIn,onComplete:function () {
                 var oP2Word = fun.getClass2(oPage2, 'p2-word')[0];
@@ -148,92 +150,25 @@ define(function (require,exports,module) {
                     }
                 }, 30);
             }})
-
-        //第二页3D立体特效
-        function op2BoxFun() {
-            var oBox_3d = fun.getClass2(oPage2, 'box-3d')[0];
-            var oCounts = 5;    //初始图片数量
-            var aImg = oPage2.getElementsByTagName('img');
-            var oImg = [];//存储图片的数组
-            var l = 0;
-
-            for (var j = 0; j < oCounts; j++) {
-                oImg[j] = aImg[j];
-                var dis1 = -(j + 1) * 400;
-                pos(aImg[j], dis1);
-                //oBox_3d.appendChild(aImg[j]);
-                move(aImg[j], 80)
-            }
-            //开启运动
-            function move(obj, iTarget) {
-                clearInterval(obj.timer);
-                obj.timer = setInterval(function () {
-                    if (obj.nowT == iTarget) {
-                        stopMove(obj);
-                        xunhuan(obj);
-                    } else {
-                        obj.nowT += 1;
-                        obj.style.transform = 'translateZ(' + obj.nowT + 'vw)';
-                    }
-                }, 5)
-            }
-            //清楚定时器
-            function stopMove(obj) {
-                clearInterval(obj.timer);
-            }
-
-            function xunhuan(obj) {
-                oBox_3d.removeChild(obj);
-                pos(oImg[l], -2000);
-                oBox_3d.appendChild(oImg[l]);
-                move(oImg[l], 80);
-                if (l >= 4) {
-                    l = 0
-                } else {
-                    ++l;
-                }
-            }
-            //随机定位元素
-            function pos(obj, trZ) {
-                var iRomL = Math.round(Math.random() * 40);
-                var iRomT = Math.round(Math.random() * 65);
-                obj.style.left = iRomL + 'vw';
-                obj.style.top = iRomT + 'vw';
-                obj.timer = null;
-                obj.style.transform = 'translateZ(' + trZ + 'vw)';
-                obj.nowT = parseInt(obj.style.transform.slice(11, -3));
-            }
-        };
-
     }
     var oBox_3d = fun.getClass2(oPage2, 'box-3d')[0];
     var op3Box = fun.getClass2(oPage3, 'p3-box')[0];
     var op3BoxInner = op3Box.innerHTML;
     //显示为第三页要执行的函数
     function three() {
-        for (var i = 0; i < 5; i++) {
-            clearInterval(oPage2.getElementsByTagName('img')[i].timer);
-        }
         var oLogo = fun.getClass2(oBox, 'logo')[2];
         var oPerson = fun.getClass2(oBox, 'person')[2];
         var oTitle = fun.getClass2(oBox, 'title')[2];
         var op3Box = fun.getClass2(oPage3, 'p3-box')[0];
-
-        setTimeout(function () {
-            miaovStartMove(oLogo, { opacity: 100 }, MIAOV_MOVE_TYPE.BUFFER, function () {
-                oPerson.style.display = 'block';
-                miaovStartMove(oPerson, { left: 0, opacity: 100 }, MIAOV_MOVE_TYPE.FLEX, function () {
-                    miaovStartMove(oTitle, { opacity: 100 }, MIAOV_MOVE_TYPE.BUFFER, function () {
-                        setTimeout(function () {
-                            op3Box.style.display = 'block';
-                            p3pic();
-                        }, 500);
-
-                    })
-                })
-            });
-        }, 500);
-
+        t3.to(oLogo, 1, { opacity: 1, ease: Linear.easeIn })
+            .to(oPerson, 1, { display: 'block', left: 0, opacity: 1, ease: Elastic.easeOut })
+            .to(oTitle, 1, {opacity: 1,ease: Linear.easeIn, onComplete: function () {
+                    setTimeout(function () {
+                        op3Box.style.display = 'block';
+                        p3pic();
+                    }, 500);
+                }
+            })
         function p3pic() {
 
             //输出所有图片
@@ -315,7 +250,7 @@ define(function (require,exports,module) {
                 // ophoto[i].startE=function () {
                 //     turn(this);
                 // };
-                fun.addEvent1(ophoto[i], startE, function (e) {
+                fun.addEvent1(ophoto[i], 'click', function (e) {
                     turn(this)
                     e.preventDefault();
                 })
@@ -396,18 +331,74 @@ define(function (require,exports,module) {
         var oP = oPage4.getElementsByTagName('p')[0];
         var oPerson = fun.getClass2(oBox, 'person')[3];
         var otitle = fun.getClass2(oBox, 'title')[3];
-        setTimeout(function () {
-            miaovStartMove(oLogo, { opacity: 100 }, MIAOV_MOVE_TYPE.BUFFER, function () {
-                oPerson.style.display = 'block';
-                miaovStartMove(oPerson, { left: 0, opacity: 100 }, MIAOV_MOVE_TYPE.FLEX, function () {
-                    miaovStartMove(otitle, { opacity: 100 }, MIAOV_MOVE_TYPE.BUFFER, function () {
-                        miaovStartMove(op1School, { opacity: 100 }, MIAOV_MOVE_TYPE.BUFFER, function () {
-                            miaovStartMove(oP, { opacity: 100 }, MIAOV_MOVE_TYPE.BUFFER)
-                        })
-                    })
-                })
-            });
-        }, 500);
+        t4.to(oLogo, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(oPerson, 1, {
+                display: 'block',
+                left: 0,
+                opacity: 1,
+                ease: Elastic.easeOut
+            })
+            .to(otitle, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(op1School,1,{
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(oP,1,{
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+    }
+
+
+    function setTime() {
+            //初始化
+            getTime();
+            //设置定时器
+            indexTimer = setInterval(function () {
+                getTime();
+            }, 1000)
+            function getTime() {
+                var nowDate = new Date();
+                var month = nowDate.getMonth() + 1;
+                var day = nowDate.getDate();
+                var week = nowDate.getDay();
+                var strWeek;
+                var h = nowDate.getHours();
+                var m = nowDate.getMinutes() < 10 ? '0' + nowDate.getMinutes() : nowDate.getMinutes();
+                var oNowTime = fun.getClass2(document, 'nowTime')[0];
+                var oNowDate = fun.getClass2(document, 'nowDate')[0];
+                switch (week) {
+                    case 0:
+                        strWeek = '日'
+                        break;
+                    case 1:
+                        strWeek = '一';
+                        break;
+                    case 2:
+                        strWeek = '二'
+                        break;
+                    case 3:
+                        strWeek = '三';
+                        break;
+                    case 4:
+                        strWeek = '四'
+                        break;
+                    case 5:
+                        strWeek = '五';
+                        break;
+                    default:
+                        strWeek = '六'
+                        break;
+                }
+                oNowTime.innerHTML = h + ":" + m;
+                oNowDate.innerHTML = month + "月" + day + "日   " + "星期" + strWeek;
+            }
     }
 
 })

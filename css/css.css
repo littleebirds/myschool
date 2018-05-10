@@ -4,28 +4,51 @@
     font-size: 14px;
 }
 html,body{
+    width: 100%;
     height: 100%;
 }
-body{
-    max-width: 750px;
-    /*min-height: ;*/
-    -webkit-perspective: 50000px;
-       -moz-perspective: 50000px;
-            perspective: 50000px;
-    position: relative;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin: auto;
-    background-color: #ffffff;
+@media screen and (max-width:550px){
+    #root{
+        width: 100%;
+        height: 100%;
+        -webkit-perspective: 50000px;
+        -moz-perspective: 50000px;
+        perspective: 50000px;
+        position: relative;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin: auto;
+        background-color: #ffffff;
+    }
+}
+@media screen and (min-width:550px){
+    #root{
+        width: 550px;
+        height: 978px;
+        -webkit-perspective: 50000px;
+        -moz-perspective: 50000px;
+        perspective: 50000px;
+        position: relative;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin: auto;
+        background-color: #ffffff;
+    }
+}
+.firstWord{
+    font-size: 50px !important;
+    color: #b4ceda;
 }
 #music{
     text-align: center;
     z-index: 1;
     position: fixed;
-    top: 3vh;
-    right: 2vw;
+    top: 3%;
+    right: 2%;
 }
 #music > img{
     width: 25%;
@@ -88,7 +111,21 @@ body{
     width: 100%;
     height: 100%;
     display: block;
+    background: url('../image/index-bg.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
     position: absolute;
+}
+#welcome .time{
+    width: 40%;
+    margin: 20% auto;
+    text-align: center;
+}
+#welcome .nowTime{
+    font-size: 55px;
+}
+#welcome .nowDate {
+    font-size: 15px;
 }
 #welcome.fadeOut{
     -webkit-animation: fadeout 1s ;
@@ -174,7 +211,7 @@ body{
     font-family: HeitiSC;
     color: rgba(0,0,0,0.6);
     position: absolute;
-    bottom: 9vh;
+    bottom: 9%;
     left:0;
     right:0;
     margin: auto;
@@ -309,7 +346,7 @@ body{
     width: 100%;
     height: 100%;
     background: url('../image/page-bg.jpg') repeat center center;
-    background-size: 100% 100%;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -318,36 +355,36 @@ body{
 /*公共样式*/
 #box .logo{
     z-index: 0;
-    width: 56.5333vw;
-    height: 14.4vw;
+    width: 56.5333%;
+    height: 14.4%;
     background: url('../image/logo.png') no-repeat center center;
     background-size: 100%;
     position: absolute;
-    left: 3vw;
-    top: 3vh;
+    left: 3%;
+    top: 3%;
     opacity: 0;
     filter:alpha(opacity:0);
 }
 #box .person{
     z-index: 0;
-    width: 40vw;
-    height: 26.42vw;
+    width: 40%;
+    height: 26.42%;
     background: url('../image/person.png') no-repeat center center;
     background-size: 100%;
     position: absolute;
     bottom: 0;
-    left: -40vw;
+    left: -40%;
     opacity: 0;
     filter:alpha(opacity:0);
     display: none;
 }
 #box .title{
     z-index: 0;
-    width: 38.4vw;
-    height: 8.25vw;
+    width: 38.4%;
+    height: 8.25%;
     position: absolute;
-    right: 4vw;
-    bottom: 3vw;
+    right: 4%;
+    bottom: 3%;
     opacity: 0;
 }
 /*正前方页面*/
@@ -356,25 +393,25 @@ body{
     left: 0;
 }
 .page1 .p1-school{
-    width: 100vw;
-    height: 56.25vw;
+    width: 100%;
+    height: 30%;
     background: url('../image/p1-school.jpg') no-repeat center center;
     background-size: 100%;
     position: absolute;
-    top: 25vw;
+    top: 25%;
     left: 0;
     opacity: 0;
     filter:alpha(opacity:0);
 }
 
 .page1 p{
-    width: 85vw;
+    width: 85%;
     font-family: '黑体';
     font-size: 15px;
     color: #000;
     line-height: 22px;
     position: absolute;
-    top: 88vw;
+    top: 50%;
     left:0;
     right:0;
     margin: auto;
@@ -410,32 +447,72 @@ body{
 .page2 .p2-box{
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: -10vw;
-    left: 0;
     filter:alpha(opacity:0);
-    -webkit-perspective: 10000px;
-            perspective: 10000px;
 }
 .page2 .box-3d{
     width: 100%;
+    height: 30%;
+    margin-top: 30%;
+    border: 1px solid red;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.page2 .box-trans:nth-of-type(2){
+    width: 25%;
     height: 100%;
-    -webkit-transform-style:preserve-3d;
-    transform-style:preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: -webkit-linear-gradient(left,rgb(254, 252, 201), transparent);
+    /* Safari 5.1 - 6.0 */
+
+    background: -o-linear-gradient(left,rgb(254, 252, 201), transparent);
+    /* Opera 11.1 - 12.0 */
+
+    background: -moz-linear-gradient(left,rgb(254, 252, 201), transparent);
+    /* Firefox 3.6 - 15 */
+
+    background: linear-gradient(left,rgb(254, 252, 201), transparent);
+    /* 标准的语法 */
+}
+.page2 .box-trans:last-child {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px sloid black;
+    background: -webkit-linear-gradient(right, rgb(254, 252, 201), transparent);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, rgb(254, 252, 201), transparent);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, rgb(254, 252, 201), transparent);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(right, rgb(254, 252, 201), transparent);
+    /* 标准的语法 */
+}
+.page2 .box-images {
+    width: 300%;
+    font-size: 0;
+    border: 1px solid transparent;
+    margin-top: -20%;
+    position: absolute;
+    top: 50%;
 }
 .page2 img{
-    /*box-shadow: 1px 1px 20px 1px red;*/
     border:15px solid white;
-    position: absolute;
-    width: 60%;
-    display: none;
+    width: 15%;
+    display: block;
+    float: left;
+    margin: 10px 1%;
 }
 .page2 .p2-board{
     z-index: 1;
     position: absolute;
-    top: 100vw;
-    width: 80vw;
-    height: 40vw;
+    top: 100%;
+    width: 80%;
+    height: 40%;
     left: 0;
     right: 0;
     margin: auto;
@@ -448,8 +525,8 @@ body{
     overflow: hidden;
 }
 .page2 .p2-trans:first-of-type{
-    width: 80vw;
-    height: 20vw;
+    width: 80%;
+    height: 20%;
     position: absolute;
     top: 0;
     background: -webkit-linear-gradient(rgb(254, 252, 201), transparent);
@@ -465,8 +542,8 @@ body{
     /* 标准的语法 */
 }
 .page2 .p2-trans:last-of-type {
-    width: 80vw;
-    height: 20vw;
+    width: 80%;
+    height: 20%;
     position: absolute;
     bottom: 0;
 
@@ -517,8 +594,8 @@ body{
     display: none;
 }
 .page3 .p3-box .photo{
-    width: 60vw;
-    height: 45vw;
+    width: 60%;
+    height: 45%;
     position: absolute;
     z-index: 0;
     box-shadow: 0 0 1px rgba(0,0,0,.01);
@@ -587,7 +664,7 @@ body{
     transform: translate3d(0,0,0) rotateY(0deg);
 }
 .page3 .photo-back .photo-wrap{
-    transform: translate3d(60vw,0,0) rotateY(180deg);
+    transform: translate3d(60%,0,0) rotateY(180deg);
 }
 .page3 .photo{
     left: 0;
@@ -616,24 +693,24 @@ body{
             transform: rotateY(-90deg);
 }
 .page4 .p4-school{
-    width: 100vw;
-    height: 56.25vw;
+    width: 100%;
+    height: 56.25%;
     background: url('../image/p4-school.jpg') no-repeat center center;
     background-size: 100%;
     position: absolute;
-    top: 25vw;
+    top: 25%;
     left: 0;
     opacity: 0;
     filter:alpha(opacity:0);
 }
 .page4 p{
-    width: 85vw;
+    width: 85%;
     font-family: '黑体';
     font-size: 15px;
     color: #000;
     line-height: 22px;
     position: absolute;
-    top: 88vw;
+    top: 93%;
     left:0;
     right:0;
     margin: auto;
