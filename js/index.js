@@ -1,13 +1,17 @@
-define(function (require,exports,module) {
+define(function (require, exports, module) {
     //main.js
     var fun = require('./m-fun.js');
-    var oWel = document.getElementById('welcome');      //应用首页
-    var oBox = document.getElementById('box');          //应用主题盒子
-    var oPage1 = fun.getClass2(document, 'page1')[0];   
+    var oWel = document.getElementById('welcome'); //应用首页
+    var oBox = document.getElementById('box'); //应用主题盒子
+    var oPage1 = fun.getClass2(document, 'page1')[0];
     var oPage2 = fun.getClass2(document, 'page2')[0];
     var oPage3 = fun.getClass2(document, 'page3')[0];
     var oPage4 = fun.getClass2(document, 'page4')[0];
     var oPage = fun.getClass2(document, 'page');
+    var page1HTML = require('./copmonent/page1').page1HTML;
+    var page2HTML = require('./copmonent/page2').page2HTML;
+    var page3HTML = require('./copmonent/page3').page3HTML;
+    var page4HTML = require('./copmonent/page4').page4HTML;
     var oMusic = document.getElementById('music').getElementsByTagName('img')[0];
     var oAudio = document.getElementsByTagName('audio')[0];
     var angle = 0;
@@ -17,13 +21,25 @@ define(function (require,exports,module) {
     var timer1 = null;
 
     //页面1
-    var t1 = new TimelineMax({repeat:0});
+    var t1, t2, t21, t3, t4;
+    var t1 = new TimelineMax({
+        repeat: 0
+    });
     //页面2
-    var t2 = new TimelineMax({ repeat: 0 });
+    var t2 = new TimelineMax({
+        repeat: 0
+    });
+    var t21 = new TimelineMax({
+        repeat: -1
+    });
     //页面3
-    var t3 = new TimelineMax({ repeat: 0 });
+    var t3 = new TimelineMax({
+        repeat: 0
+    });
     //页面4
-    var t4 = new TimelineMax({ repeat: 0 });
+    var t4 = new TimelineMax({
+        repeat: 0
+    });
 
     //控制音乐播放
     fun.addEvent1(oMusic, 'click', function () {
@@ -45,8 +61,8 @@ define(function (require,exports,module) {
 
         oWel.className += 'fadeOut';
         setTimeout(function () {
-            oWel.style.display = 'none';
-        },
+                oWel.style.display = 'none';
+            },
             1000);
         if (fun.getStyle1(oBox, 'display') == 'none') {
             oBox.style.display = 'block';
@@ -103,72 +119,164 @@ define(function (require,exports,module) {
     }
     //显示为第一页要执行的函数
     function one() {
+        //清楚其他页面的动画
+        t2 ? t2.clear() : '';
+        t21 ? t21.clear() : '';
+        t4 ? t4.clear() : '';
+        //初始化当前页面动画
+        t1 = new TimelineMax({
+            repeat: 0
+        });
+        oPage1.innerHTML = page1HTML;
+        oPage2.innerHTML = '';
+        oPage4.innerHTML = '';
 
         var oLogo = fun.getClass2(oBox, 'logo')[0];
         var op1School = fun.getClass2(oBox, 'p1-school')[0];
         var oP = oBox.getElementsByTagName('p')[0];
         var oPerson = fun.getClass2(oBox, 'person')[0];
         var otitle = fun.getClass2(oBox, 'title')[0];
-        t1.to(oLogo,1,{opacity:1,ease:Linear.easeIn})
-            .to(oPerson, 1, { display: 'block', left: 0, opacity: 1, ease: Elastic.easeOut})
-            .to(otitle, 1, { opacity: 1, ease: Linear.easeIn})
-            .to(op1School, 1, { opacity: 1, ease: Linear.easeIn})
-            .to(oP, 1, { opacity: 1, ease: Linear.easeIn})
+        t1.to(oLogo, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(oPerson, 1, {
+                display: 'block',
+                left: 0,
+                opacity: 1,
+                ease: Elastic.easeOut
+            })
+            .to(otitle, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(op1School, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(oP, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
     }
 
     //显示为第二页要执行的函数
     function two() {
-        op3Box.style.display = 'none';
-        op3Box.innerHTML = op3BoxInner;
-        var oLogo = fun.getClass2(oBox, 'logo')[1];
-        var oPerson = fun.getClass2(oBox, 'person')[1];
-        var oTitle = fun.getClass2(oBox, 'title')[1];
+        t1 ? t1.clear() : '';
+        t3 ? t3.clear() : '';
+        t2 = new TimelineMax({
+            repeat: 0
+        });
+        t21 = new TimelineMax({
+            repeat: -1
+        });
+        oPage2.innerHTML = page2HTML;
+        oPage1.innerHTML = '';
+        oPage3.innerHTML = '';
+
+        var oLogo = fun.getClass2(oBox, 'logo')[0];
+        var oPerson = fun.getClass2(oBox, 'person')[0];
+        var oTitle = fun.getClass2(oBox, 'title')[0];
         var op2Box = fun.getClass2(oBox, 'p2-box')[0];
         var op2Board = fun.getClass2(oBox, 'p2-board')[0];
+        var oBoxImage = fun.getClass2(oBox, 'box-images')[0];
+        t2.to(oLogo, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(oPerson, 1, {
+                display: 'block',
+                left: 0,
+                opacity: 1,
+                ease: Elastic.easeOut
+            })
+            .to(oTitle, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(op2Box, 1, {
+                opacity: 1,
+                ease: Linear.easeIn,
+                onComplete: function () {
 
-        t2.to(oLogo, 1, { opacity: 1, ease: Linear.easeIn })
-            .to(oPerson, 1, { display: 'block', left: 0, opacity: 1, ease: Elastic.easeOut })
-            .to(oTitle, 1, { opacity: 1, ease: Linear.easeIn })
-            .to(op2Box, 1, { opacity: 100, ease: Linear.easeIn,onComplete:function() {
 
-            }})
-            .to(op2Board,1,{opacity:1,ease:Linear.easeIn,onComplete:function () {
-                var oP2Word = fun.getClass2(oPage2, 'p2-word')[0];
-                oP2Word.scrollTop = 0;
-                var oUl1 = oP2Word.getElementsByTagName('ul')[0];
-                var oUl2 = oP2Word.getElementsByTagName('ul')[1];
-                if (oUl2.innerHTML == '') {
-                    oUl2.innerHTML = oUl1.innerHTML;
                 }
-                oP2Word.scrollTop = 0;
-                clearInterval(timer1);
-                timer1 = setInterval(function () {
-                    if (oP2Word.scrollTop >= oUl1.scrollHeight) {
-                        oP2Word.scrollTop = 0;
-                    } else {
-                        ++oP2Word.scrollTop;
+            })
+            .to(op2Board, 1, {
+                opacity: 1,
+                ease: Linear.easeIn,
+                onComplete: function () {
+                    var oP2Word = fun.getClass2(oPage2, 'p2-word')[0];
+                    oP2Word.scrollTop = 0;
+                    var oUl1 = oP2Word.getElementsByTagName('ul')[0];
+                    var oUl2 = oP2Word.getElementsByTagName('ul')[1];
+                    if (oUl2.innerHTML == '') {
+                        oUl2.innerHTML = oUl1.innerHTML;
                     }
-                }, 30);
-            }})
+                    oP2Word.scrollTop = 0;
+                    clearInterval(timer1);
+                    timer1 = setInterval(function () {
+                        if (oP2Word.scrollTop >= oUl1.scrollHeight) {
+                            oP2Word.scrollTop = 0;
+                        } else {
+                            ++oP2Word.scrollTop;
+                        }
+                    }, 30);
+                }
+            })
+        //第二页的小轮播图
+        t21.to(oBoxImage, 15, {
+            left: -1710,
+            ease: Linear.easeIn,
+            onComplete: function () {
+                oBoxImage.style.left = '-210px';
+            }
+        })
+        fun.addEvent1(oBoxImage, 'click', function () {
+            if (t21._paused == true) {
+                t21.play()
+            } else {
+                t21.stop();
+            }
+        })
     }
-    var oBox_3d = fun.getClass2(oPage2, 'box-3d')[0];
-    var op3Box = fun.getClass2(oPage3, 'p3-box')[0];
-    var op3BoxInner = op3Box.innerHTML;
     //显示为第三页要执行的函数
     function three() {
-        var oLogo = fun.getClass2(oBox, 'logo')[2];
-        var oPerson = fun.getClass2(oBox, 'person')[2];
-        var oTitle = fun.getClass2(oBox, 'title')[2];
+        t2 ? t2.clear() : '';
+        t21 ? t21.clear() : '';
+        t4 ? t4.clear() : ''
+        t3 = new TimelineMax({
+            repeat: 0
+        });
+        oPage3.innerHTML = page3HTML;
+        oPage2.innerHTML = '';
+        oPage4.innerHTML = '';
+        var oLogo = fun.getClass2(oBox, 'logo')[0];
+        var oPerson = fun.getClass2(oBox, 'person')[0];
+        var oTitle = fun.getClass2(oBox, 'title')[0];
         var op3Box = fun.getClass2(oPage3, 'p3-box')[0];
-        t3.to(oLogo, 1, { opacity: 1, ease: Linear.easeIn })
-            .to(oPerson, 1, { display: 'block', left: 0, opacity: 1, ease: Elastic.easeOut })
-            .to(oTitle, 1, {opacity: 1,ease: Linear.easeIn, onComplete: function () {
+        var oBox_3d = fun.getClass2(oPage2, 'box-3d')[0];
+        t3.to(oLogo, 1, {
+                opacity: 1,
+                ease: Linear.easeIn
+            })
+            .to(oPerson, 1, {
+                display: 'block',
+                left: 0,
+                opacity: 1,
+                ease: Elastic.easeOut
+            })
+            .to(oTitle, 1, {
+                opacity: 1,
+                ease: Linear.easeIn,
+                onComplete: function () {
                     setTimeout(function () {
                         op3Box.style.display = 'block';
                         p3pic();
                     }, 500);
                 }
             })
+
         function p3pic() {
 
             //输出所有图片
@@ -229,6 +337,7 @@ define(function (require,exports,module) {
                     desc: '描述11'
                 }
             };
+
             function addPhoto() {
                 var temp = op3Box.innerHTML;
                 var html = [];
@@ -309,7 +418,16 @@ define(function (require,exports,module) {
 
             //计算取值范围
             function range() {
-                var range = { top: { x: [], y: [] }, bottom: { x: [], y: [] } };
+                var range = {
+                    top: {
+                        x: [],
+                        y: []
+                    },
+                    bottom: {
+                        x: [],
+                        y: []
+                    }
+                };
 
                 range.top.x = [0 - (op3Box.clientWidth / 2), op3Box.clientWidth / 2 + ophoto[0].clientWidth];
                 range.top.y = [0 - op3Box.clientHeight / 2, -ophoto[0].clientWidth / 2];
@@ -323,14 +441,19 @@ define(function (require,exports,module) {
     }
     //显示为第四页要执行的函数
     function four() {
-        op3Box.style.display = 'none';
-        op3Box.innerHTML = op3BoxInner;
-
-        var oLogo = fun.getClass2(oBox, 'logo')[3];
+        t1 ? t1.clear() : '';
+        t3 ? t3.clear() : '';
+        t4 = new TimelineMax({
+            repeat: 0
+        });
+        oPage4.innerHTML = page4HTML;
+        oPage1.innerHTML = '';
+        oPage3.innerHTML = '';
+        var oLogo = fun.getClass2(oBox, 'logo')[0];
         var op1School = fun.getClass2(oBox, 'p4-school')[0];
         var oP = oPage4.getElementsByTagName('p')[0];
-        var oPerson = fun.getClass2(oBox, 'person')[3];
-        var otitle = fun.getClass2(oBox, 'title')[3];
+        var oPerson = fun.getClass2(oBox, 'person')[0];
+        var otitle = fun.getClass2(oBox, 'title')[0];
         t4.to(oLogo, 1, {
                 opacity: 1,
                 ease: Linear.easeIn
@@ -345,11 +468,11 @@ define(function (require,exports,module) {
                 opacity: 1,
                 ease: Linear.easeIn
             })
-            .to(op1School,1,{
+            .to(op1School, 1, {
                 opacity: 1,
                 ease: Linear.easeIn
             })
-            .to(oP,1,{
+            .to(oP, 1, {
                 opacity: 1,
                 ease: Linear.easeIn
             })
@@ -357,48 +480,49 @@ define(function (require,exports,module) {
 
 
     function setTime() {
-            //初始化
+        //初始化
+        getTime();
+        //设置定时器
+        indexTimer = setInterval(function () {
             getTime();
-            //设置定时器
-            indexTimer = setInterval(function () {
-                getTime();
-            }, 1000)
-            function getTime() {
-                var nowDate = new Date();
-                var month = nowDate.getMonth() + 1;
-                var day = nowDate.getDate();
-                var week = nowDate.getDay();
-                var strWeek;
-                var h = nowDate.getHours();
-                var m = nowDate.getMinutes() < 10 ? '0' + nowDate.getMinutes() : nowDate.getMinutes();
-                var oNowTime = fun.getClass2(document, 'nowTime')[0];
-                var oNowDate = fun.getClass2(document, 'nowDate')[0];
-                switch (week) {
-                    case 0:
-                        strWeek = '日'
-                        break;
-                    case 1:
-                        strWeek = '一';
-                        break;
-                    case 2:
-                        strWeek = '二'
-                        break;
-                    case 3:
-                        strWeek = '三';
-                        break;
-                    case 4:
-                        strWeek = '四'
-                        break;
-                    case 5:
-                        strWeek = '五';
-                        break;
-                    default:
-                        strWeek = '六'
-                        break;
-                }
-                oNowTime.innerHTML = h + ":" + m;
-                oNowDate.innerHTML = month + "月" + day + "日   " + "星期" + strWeek;
+        }, 1000)
+
+        function getTime() {
+            var nowDate = new Date();
+            var month = nowDate.getMonth() + 1;
+            var day = nowDate.getDate();
+            var week = nowDate.getDay();
+            var strWeek;
+            var h = nowDate.getHours();
+            var m = nowDate.getMinutes() < 10 ? '0' + nowDate.getMinutes() : nowDate.getMinutes();
+            var oNowTime = fun.getClass2(document, 'nowTime')[0];
+            var oNowDate = fun.getClass2(document, 'nowDate')[0];
+            switch (week) {
+                case 0:
+                    strWeek = '日'
+                    break;
+                case 1:
+                    strWeek = '一';
+                    break;
+                case 2:
+                    strWeek = '二'
+                    break;
+                case 3:
+                    strWeek = '三';
+                    break;
+                case 4:
+                    strWeek = '四'
+                    break;
+                case 5:
+                    strWeek = '五';
+                    break;
+                default:
+                    strWeek = '六'
+                    break;
             }
+            oNowTime.innerHTML = h + ":" + m;
+            oNowDate.innerHTML = month + "月" + day + "日   " + "星期" + strWeek;
+        }
     }
 
 })

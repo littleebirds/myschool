@@ -1,113 +1,108 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-size: 14px;
 }
-html,body{
+
+html,
+body {
     width: 100%;
     height: 100%;
 }
-@media screen and (max-width:550px){
-    #root{
-        width: 100%;
-        height: 100%;
-        -webkit-perspective: 50000px;
-        -moz-perspective: 50000px;
-        perspective: 50000px;
-        position: relative;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        margin: auto;
-        background-color: #ffffff;
-    }
+
+#root {
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 50000px;
+    -moz-perspective: 50000px;
+    perspective: 50000px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #ffffff;
 }
-@media screen and (min-width:550px){
-    #root{
-        width: 550px;
-        height: 978px;
-        -webkit-perspective: 50000px;
-        -moz-perspective: 50000px;
-        perspective: 50000px;
-        position: relative;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        margin: auto;
-        background-color: #ffffff;
-    }
-}
-.firstWord{
+
+.firstWord {
     font-size: 50px !important;
     color: #b4ceda;
 }
-#music{
+
+#music {
     text-align: center;
-    z-index: 1;
+    z-index: 99;
     position: fixed;
     top: 3%;
     right: 2%;
 }
-#music > img{
+
+#music>img {
     width: 25%;
     -webkit-animation: imgrotate 2s linear infinite;
-       -moz-animation: imgrotate 2s linear infinite;
-         -o-animation: imgrotate 2s linear infinite;
-            animation: imgrotate 2s linear infinite;
+    -moz-animation: imgrotate 2s linear infinite;
+    -o-animation: imgrotate 2s linear infinite;
+    animation: imgrotate 2s linear infinite;
 }
+
 @-webkit-keyframes imgrotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
+
 @-moz-keyframes imgrotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
+
 @-ms-keyframes imgrotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
+
 @-o-keyframes imgrotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
+
 @keyframes imgrotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
-#wrap-access{
+
+#wrap-access {
     width: 100%;
     height: 100%;
     opacity: 0.7;
-    background: rgb(0,0,0);
+    background: rgb(0, 0, 0);
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 999;
 }
-#welcome{
+
+#welcome {
     width: 100%;
     height: 100%;
     display: block;
@@ -116,233 +111,257 @@ html,body{
     background-size: cover;
     position: absolute;
 }
-#welcome .time{
+
+#welcome .time {
     width: 40%;
     margin: 20% auto;
     text-align: center;
 }
-#welcome .nowTime{
+
+#welcome .nowTime {
     font-size: 55px;
 }
+
 #welcome .nowDate {
     font-size: 15px;
 }
-#welcome.fadeOut{
-    -webkit-animation: fadeout 1s ;
-            animation: fadeout 1s;
+
+#welcome.fadeOut {
+    -webkit-animation: fadeout 1s;
+    animation: fadeout 1s;
 }
+
 @-webkit-keyframes fadeout {
-    0%{
+    0% {
         opacity: 1;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
     }
-    100%{
+    100% {
         opacity: 0;
         left: 100%;
         top: 0;
     }
 }
+
 @-moz-keyframes fadeout {
-    0%{
+    0% {
         opacity: 1;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
     }
-    100%{
+    100% {
         opacity: 0;
         left: 100%;
         top: 0;
     }
 }
+
 @-ms-keyframes fadeout {
-    0%{
+    0% {
         opacity: 1;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
     }
-    100%{
+    100% {
         opacity: 0;
         left: 100%;
         top: 0;
     }
 }
+
 @-o-keyframes fadeout {
-    0%{
+    0% {
         opacity: 1;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
     }
-    100%{
+    100% {
         opacity: 0;
         left: 100%;
         top: 0;
     }
 }
+
 @keyframes fadeout {
-    0%{
+    0% {
         opacity: 1;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
     }
-    100%{
+    100% {
         opacity: 0;
         left: 100%;
         top: 0;
     }
 }
-#welcome > img{
+
+#welcome>img {
     width: 100%;
     height: 100%;
     z-index: 0;
     position: absolute;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
 }
-#welcome > .slide{
+
+#welcome>.slide {
     width: 144px;
     text-align: center;
     z-index: 1;
     font-size: 23px;
     font-weight: bolder;
     font-family: HeitiSC;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     position: absolute;
     bottom: 9%;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     margin: auto;
     display: inline-block;
-    background: linear-gradient(-45deg,
-                transparent 0,transparent 10px,white 60px,transparent 100px)
-                no-repeat -120px 0;
+    background: linear-gradient(-45deg, transparent 0, transparent 10px, white 60px, transparent 100px) no-repeat -120px 0;
     -webkit-animation: slideanimation 2s infinite;
-       -moz-animation: slideanimation 2s infinite;
-         -o-animation: slideanimation 2s infinite;
-            animation: slideanimation 2s infinite;
+    -moz-animation: slideanimation 2s infinite;
+    -o-animation: slideanimation 2s infinite;
+    animation: slideanimation 2s infinite;
 }
+
 @-webkit-keyframes slideanimation {
-     0%{
-         background-position: -200px 0;
-     }
-     100%{
-         background-position: 130px 0;
-     }
- }
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: 130px 0;
+    }
+}
+
 @-moz-keyframes slideanimation {
-    0%{
+    0% {
         background-position: -200px 0;
     }
-    100%{
+    100% {
         background-position: 130px 0;
     }
 }
+
 @-ms-keyframes slideanimation {
-    0%{
+    0% {
         background-position: -200px 0;
     }
-    100%{
+    100% {
         background-position: 130px 0;
     }
 }
+
 @-o-keyframes slideanimation {
-    0%{
+    0% {
         background-position: -200px 0;
     }
-    100%{
+    100% {
         background-position: 130px 0;
     }
 }
+
 @keyframes slideanimation {
-    0%{
+    0% {
         background-position: -200px 0;
     }
-    100%{
+    100% {
         background-position: 130px 0;
     }
 }
+
 /*外包盒子*/
-#box{
-    display:none;
+
+#box {
+    display: none;
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    -webkit-transform-style:preserve-3d;
-            transform-style:preserve-3d;
-            transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: 1s;
 }
-#box.rotate{
+
+#box.rotate {
     -webkit-transform-origin: 50vw 50vh -50vw;
-       -moz-transform-origin: 50vw 50vh -50vw;
-        -ms-transform-origin: 50vw 50vh -50vw;
-         -o-transform-origin: 50vw 50vh -50vw;
-            transform-origin: 50vw 50vh -50vw;
+    -moz-transform-origin: 50vw 50vh -50vw;
+    -ms-transform-origin: 50vw 50vh -50vw;
+    -o-transform-origin: 50vw 50vh -50vw;
+    transform-origin: 50vw 50vh -50vw;
     /*transform: rotateY(90deg);*/
 }
-#box.fadeIn{
+
+#box.fadeIn {
     -webkit-animation: fadein 1s linear;
-       -moz-animation: fadein 1s linear;
-         -o-animation: fadein 1s linear;
-            animation: fadein 1s linear;
+    -moz-animation: fadein 1s linear;
+    -o-animation: fadein 1s linear;
+    animation: fadein 1s linear;
 }
+
 @-webkit-keyframes fadein {
-    0%{
+    0% {
         -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
+
 @-moz-keyframes fadein {
-    0%{
+    0% {
         -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
+
 @-ms-keyframes fadein {
-    0%{
+    0% {
         -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
+
 @-o-keyframes fadein {
-    0%{
+    0% {
         -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
+
 @keyframes fadein {
     0% {
         -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
 
 /*Box所有单面过渡时间*/
-#box .page{
+
+#box .page {
     width: 100%;
     height: 100%;
     background: url('../image/page-bg.jpg') repeat center center;
@@ -352,33 +371,37 @@ html,body{
     left: 0;
     transition: 2s;
 }
+
 /*公共样式*/
-#box .logo{
+
+#box .logo {
     z-index: 0;
-    width: 56.5333%;
-    height: 14.4%;
+    width: 50%;
+    height: 7.4%;
     background: url('../image/logo.png') no-repeat center center;
-    background-size: 100%;
+    background-size: contain;
     position: absolute;
     left: 3%;
     top: 3%;
     opacity: 0;
-    filter:alpha(opacity:0);
+    filter: alpha(opacity:0);
 }
-#box .person{
+
+#box .person {
     z-index: 0;
     width: 40%;
-    height: 26.42%;
+    height: 14%;
     background: url('../image/person.png') no-repeat center center;
-    background-size: 100%;
+    background-size: contain;
     position: absolute;
     bottom: 0;
     left: -40%;
     opacity: 0;
-    filter:alpha(opacity:0);
+    filter: alpha(opacity:0);
     display: none;
 }
-#box .title{
+
+#box .title {
     z-index: 0;
     width: 38.4%;
     height: 8.25%;
@@ -386,96 +409,105 @@ html,body{
     right: 4%;
     bottom: 3%;
     opacity: 0;
-}
-/*正前方页面*/
-#box>.page1{
-    top:0;
-    left: 0;
-}
-.page1 .p1-school{
-    width: 100%;
-    height: 30%;
-    background: url('../image/p1-school.jpg') no-repeat center center;
-    background-size: 100%;
-    position: absolute;
-    top: 25%;
-    left: 0;
-    opacity: 0;
-    filter:alpha(opacity:0);
+    background-size: contain;
 }
 
-.page1 p{
+/*正前方页面*/
+
+#box>.page1 {
+    top: 0;
+    left: 0;
+}
+
+.page1 .p1-school {
+    width: 100%;
+    height: 32%;
+    background: url('../image/p1-school.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 14%;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity:0);
+}
+
+.page1 p {
     width: 85%;
     font-family: '黑体';
     font-size: 15px;
     color: #000;
     line-height: 22px;
     position: absolute;
-    top: 50%;
-    left:0;
-    right:0;
+    top: 52%;
+    left: 0;
+    right: 0;
     margin: auto;
     opacity: 0;
-    filter:alpha(opacity:0);
+    filter: alpha(opacity:0);
 }
-.page1 p>span{
+
+.page1 p>span {
     font-size: 15px;
     color: #b4ceda;
     font-weight: bold;
 }
 
-
-.page1 .p1-title{
+.page1 .p1-title {
     background: url('../image/jianjie.png') no-repeat center center;
-    background-size: 100%;
 }
+
 /*右侧页面*/
-#box>.page2{
-    top:0;
+
+#box>.page2 {
+    top: 0;
     left: 100%;
     -webkit-transform-origin: left;
-       -moz-transform-origin: left;
-        -ms-transform-origin: left;
-         -o-transform-origin: left;
-            transform-origin: left;
+    -moz-transform-origin: left;
+    -ms-transform-origin: left;
+    -o-transform-origin: left;
+    transform-origin: left;
     -webkit-transform: rotateY(90deg);
-       -moz-transform: rotateY(90deg);
-        -ms-transform: rotateY(90deg);
-         -o-transform: rotateY(90deg);
-            transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
 }
-.page2 .p2-box{
-    width: 100%;
-    height: 100%;
-    filter:alpha(opacity:0);
-}
-.page2 .box-3d{
+
+.page2 .p2-box {
     width: 100%;
     height: 30%;
-    margin-top: 30%;
-    border: 1px solid red;
-    box-sizing: border-box;
+    position: absolute;
+    top: 14%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    filter: alpha(opacity:0);
+}
+
+.page2 .box-3d {
+    width: 100%;
+    height: 100%;
     position: relative;
     overflow: hidden;
 }
-.page2 .box-trans:nth-of-type(2){
+
+.page2 .box-trans:nth-of-type(2) {
     width: 25%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    background: -webkit-linear-gradient(left,rgb(254, 252, 201), transparent);
+    background: -webkit-linear-gradient(left, rgb(254, 252, 201), transparent);
     /* Safari 5.1 - 6.0 */
-
-    background: -o-linear-gradient(left,rgb(254, 252, 201), transparent);
+    background: -o-linear-gradient(left, rgb(254, 252, 201), transparent);
     /* Opera 11.1 - 12.0 */
-
-    background: -moz-linear-gradient(left,rgb(254, 252, 201), transparent);
+    background: -moz-linear-gradient(left, rgb(254, 252, 201), transparent);
     /* Firefox 3.6 - 15 */
-
-    background: linear-gradient(left,rgb(254, 252, 201), transparent);
+    background: linear-gradient(left, rgb(254, 252, 201), transparent);
     /* 标准的语法 */
 }
+
 .page2 .box-trans:last-child {
     width: 25%;
     height: 100%;
@@ -492,95 +524,99 @@ html,body{
     background: linear-gradient(right, rgb(254, 252, 201), transparent);
     /* 标准的语法 */
 }
+
 .page2 .box-images {
-    width: 300%;
+    width: 3000px;
     font-size: 0;
     border: 1px solid transparent;
-    margin-top: -20%;
+    margin-top: -96px;
     position: absolute;
     top: 50%;
+    left: -210px;
 }
-.page2 img{
-    border:15px solid white;
-    width: 15%;
+
+.page2 img {
+    border: 15px solid white;
+    width: 250px;
     display: block;
     float: left;
-    margin: 10px 1%;
+    margin: 10px 10px;
 }
-.page2 .p2-board{
+
+.page2 .p2-board {
     z-index: 1;
     position: absolute;
-    top: 100%;
+    top: 53%;
     width: 80%;
-    height: 40%;
+    height: 30%;
     left: 0;
     right: 0;
     margin: auto;
     opacity: 0;
-    filter:alpha(opacity:0);
+    filter: alpha(opacity:0);
 }
-.page2 .p2-word{
+
+.page2 .p2-word {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.page2 .p2-trans:first-of-type{
-    width: 80%;
-    height: 20%;
+
+.page2 .p2-trans:first-of-type {
+    width: 100%;
+    height: 45%;
     position: absolute;
     top: 0;
     background: -webkit-linear-gradient(rgb(254, 252, 201), transparent);
     /* Safari 5.1 - 6.0 */
-
     background: -o-linear-gradient(rgb(254, 252, 201), transparent);
     /* Opera 11.1 - 12.0 */
-
-    background: -moz-linear-gradient(rgb(254,252,201), transparent);
+    background: -moz-linear-gradient(rgb(254, 252, 201), transparent);
     /* Firefox 3.6 - 15 */
-
     background: linear-gradient(rgb(254, 252, 201), transparent);
     /* 标准的语法 */
 }
+
 .page2 .p2-trans:last-of-type {
-    width: 80%;
-    height: 20%;
+    width: 100%;
+    height: 45%;
     position: absolute;
     bottom: 0;
-
     background: -webkit-linear-gradient(transparent, rgb(254, 252, 201));
     /* Safari 5.1 - 6.0 */
-
     background: -o-linear-gradient(transparent, rgb(254, 252, 201));
     /* Opera 11.1 - 12.0 */
-
     background: -moz-linear-gradient(transparent, rgb(254, 252, 201));
     /* Firefox 3.6 - 15 */
-
     background: linear-gradient(transparent, rgb(254, 252, 201));
     /* 标准的语法 */
 }
-.page2 li{
+
+.page2 li {
     line-height: 25px;
     font-family: '黑体';
     font-size: 15px;
     list-style: none;
-    margin:4px 0;
+    margin: 4px 0;
 }
-.page2 .p2-title{
+
+.page2 .p2-title {
     background: url('../image/history.png') no-repeat center center;
-    background-size: 100%;
 }
+
 /*正下方页面*/
-#box>.page3{
-    top:0;
+
+#box>.page3 {
+    top: 0;
     left: 0;
-    -webkit-transform:translateZ(-100vw) rotateY(180deg);
-       -moz-transform:translateZ(-100vw) rotateY(180deg);
-        -ms-transform:translateZ(-100vw) rotateY(180deg);
-         -o-transform:translateZ(-100vw) rotateY(180deg);
-            transform:translateZ(-100vw) rotateY(180deg);
+    -webkit-transform: translateZ(-100vw) rotateY(180deg);
+    -moz-transform: translateZ(-100vw) rotateY(180deg);
+    -ms-transform: translateZ(-100vw) rotateY(180deg);
+    -o-transform: translateZ(-100vw) rotateY(180deg);
+    transform: translateZ(-100vw) rotateY(180deg);
 }
-.page3 .p3-box{
+
+.page3 .p3-box {
     height: 100%;
     position: absolute;
     top: 0;
@@ -593,47 +629,65 @@ html,body{
     transition: 1s;
     display: none;
 }
-.page3 .p3-box .photo{
+
+.page3 .p3-box .photo {
     width: 60%;
-    height: 45%;
+    height: 26%;
     position: absolute;
     z-index: 0;
-    box-shadow: 0 0 1px rgba(0,0,0,.01);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .01);
     transition: 1s;
 }
 
-.page3 .photo .side{
+.page3 .photo .side {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     padding: 15px;
     box-sizing: border-box;
 }
-.page3 .photo .side-front{
+
+.page3 .photo .side-front {
     display: block;
 }
-.page3 .side-front p:first-of-type{
+
+.page3 .side-front p:first-of-type {
     width: 100%;
+    height: 85%;
     overflow: hidden;
+    position: relative;
 }
-.page3 .p3-box img{
+
+.page3 .p3-box img {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
-.page3 .side-front p:last-of-type{
+
+.page3 .side-front p:last-of-type {
     font-family: '微软雅黑';
     font-size: 16px;
-    line-height: 50px;
+    height: 15%;
     text-align: center;
+    margin: 0 auto;
 }
-.page3 .side-back p{
+
+.page3 .side-front span {}
+
+.page3 .side-back p {
     color: #666;
     font-size: 16px;
     line-height: 1.5em;
 }
-.page3 .p3-box .photo-center{
+
+.page3 .p3-box .photo-center {
     left: 0;
     right: 0;
     top: 0;
@@ -641,86 +695,98 @@ html,body{
     margin: auto;
     z-index: 20;
 }
-.page3 .photo-wrap{
+
+.page3 .photo-wrap {
     width: 100%;
     height: 100%;
     position: absolute;
     -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-           transform-origin: 0  50%;
-                 transition: 1s;
+    transform-style: preserve-3d;
+    transform-origin: 0 50%;
+    transition: 1s;
 }
-.page3 .photo-wrap .side-front{
-    transform: translate3d(0,0,0) rotateY(0deg);
+
+.page3 .photo-wrap .side-front {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
 }
-.page3 .photo-wrap .side-back{
-    transform: translate3d(0,0,0) rotateY(180deg);
+
+.page3 .photo-wrap .side-back {
+    transform: translate3d(0, 0, 0) rotateY(180deg);
 }
-.page3 .photo-wrap .side{
+
+.page3 .photo-wrap .side {
     -webkit-backface-visibility: hidden;
 }
 
-.page3 .photo-front .photo-wrap{
-    transform: translate3d(0,0,0) rotateY(0deg);
+.page3 .photo-front .photo-wrap {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
 }
-.page3 .photo-back .photo-wrap{
-    transform: translate3d(60%,0,0) rotateY(180deg);
+
+.page3 .photo-back .photo-wrap {
+    transform: translate3d(60vw, 0, 0) rotateY(180deg);
 }
-.page3 .photo{
+
+.page3 .photo {
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
     margin: auto;
 }
-.page3 .p3-title{
+
+.page3 .p3-title {
     background: url('../image/scene.png') no-repeat center center;
     background-size: 100%;
 }
+
 /*左侧页面*/
-#box>.page4{
-    top:0;
+
+#box>.page4 {
+    top: 0;
     left: -100%;
     -webkit-transform-origin: right;
-       -moz-transform-origin: right;
-        -ms-transform-origin: right;
-         -o-transform-origin: right;
-            transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
     -webkit-transform: rotateY(-90deg);
-       -moz-transform: rotateY(-90deg);
-        -ms-transform: rotateY(-90deg);
-         -o-transform: rotateY(-90deg);
-            transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
 }
-.page4 .p4-school{
+
+.page4 .p4-school {
     width: 100%;
-    height: 56.25%;
+    height: 32%;
     background: url('../image/p4-school.jpg') no-repeat center center;
-    background-size: 100%;
+    background-size: cover;
     position: absolute;
-    top: 25%;
+    top: 14%;
     left: 0;
     opacity: 0;
-    filter:alpha(opacity:0);
+    filter: alpha(opacity:0);
 }
-.page4 p{
+
+.page4 p {
     width: 85%;
     font-family: '黑体';
     font-size: 15px;
     color: #000;
     line-height: 22px;
     position: absolute;
-    top: 93%;
-    left:0;
-    right:0;
+    top: 52%;
+    left: 0;
+    right: 0;
     margin: auto;
     opacity: 0;
-    filter:alpha(opacity:0);
+    filter: alpha(opacity:0);
 }
-.page4 .p4-title{
+
+.page4 .p4-title {
     background: url('../image/evening.png') no-repeat center center;
-    background-size: 100%;
 }
-audio{
+
+audio {
     display: none;
 }
