@@ -1,7 +1,6 @@
-##校园宣传页面
+## 校园宣传页面
 
-This is index link [index.html](https://littleebirds.github.io/myschool/index.html)
+- demo link： [https://littleebirds.github.io/myschool/index.html](https://littleebirds.github.io/myschool/index.html)
+- 这是一个移动端项目，请使用手机扫描下面二维码查看，或者PC环境下在浏览器里使用开发者选项进入到手机模式下查看
 
-*这是一个移动端项目，请在手机模式下观看或者扫下面的二维码*
-
-![二维码](indexlink.png)
+ ![二维码](indexlink.png)
